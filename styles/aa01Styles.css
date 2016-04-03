@@ -1,0 +1,215 @@
+body{
+	font-size: 10pt;
+	text-align: center;
+	font-family:"Microsoft Sans Serif",Georgia,Serif;
+	overflow: auto;
+	margin: 0;
+	background-color: #ccffe6;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+	padding: 0;
+	font-weight: normal;
+}
+
+.content-container{
+	min-width: 1024px;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+.title-strip, .body-strip{
+	box-shadow: 5px 5px 0px #61d199;
+	background-color: white;
+	
+	border: 1px solid #f2f2f2;
+
+	padding: 20px;
+	margin: 10px;
+
+	overflow: auto;
+}
+
+.footer-strip{
+	font-size: 9pt;
+}
+
+.title-strip{
+	height: 180px;
+
+	font-family: Fredoka One;
+}
+
+.body-strip{
+	height: 600px;
+}
+
+.circle {
+	border-radius: 50%;
+	width:  175px;
+	height: 175px; 
+	background-color:#33ff99;
+	box-shadow: 5px 5px 0px #00cc66;
+
+	text-decoration: none;
+
+	float: left;
+
+	cursor: pointer;
+
+	/* Safari */
+	-webkit-transform: rotate(-10deg);
+	/* Firefox */
+	-moz-transform: rotate(-10deg);
+	/* IE */
+	-ms-transform: rotate(-10deg);
+	/* Opera */
+	-o-transform: rotate(-10deg);
+	/* Internet Explorer TODO*/
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+
+}
+
+.circle:hover{
+	background-color: #66ffb3;
+	box-shadow: 5px 5px 0px #00e673;
+}
+
+.circle h5{
+	color: black;
+}
+
+.title-text{
+	padding-top: 48px;
+
+	color: white;
+	font-size: 18pt;
+	font-family: Fredoka One;
+	text-shadow: 2px 2px #00cc66;
+	cursor: pointer;
+}
+
+.nav-options-container{
+	float: right;
+	margin-left: 80px;
+
+	text-align: right;
+	font-size: 20pt;
+	height: 180px;
+}
+
+.nav-option{
+	margin: 15px;
+	cursor: pointer;
+}
+
+.nav-option a{
+	color: #99ffcc;
+	text-shadow: 2px 2px #4b9b73;
+	text-decoration: none;
+}
+
+.nav-option a:hover{
+	color: #4dffa6;
+	text-shadow: 2px 2px #4b9b73;
+}
+
+/* Home */
+.home-blob{
+	overflow: auto;
+}
+
+.home-blob p{
+	width: 800px;
+}
+
+.home-blob h1{
+	font-family: Fredoka One;
+	font-size: 50pt;
+
+	margin: 0;
+	width: 100px;
+
+	color:#33ff99;
+	text-shadow: 2px 2px 0px #00cc66;
+}
+
+.home-blob p, .home-blob h1{
+	float: left;
+}
+
+.member-button{
+	padding: 0 5px 0 0;
+}
+
+.member-button-icon, .member-button{
+	width: 180px;
+	float: left;
+}
+
+.member-button:hover{
+	opacity: 0.8;
+	cursor: pointer;
+	width: 180px;
+	float: left;
+}
+
+.active-member-profile-container, .member-profile-icons-container{
+	padding: 5px;
+	overflow: auto;
+}
+
+.member-icon{
+	float: left;
+}
+
+.member-details{
+	height: 320px;
+	width: 480px;
+	margin: 0 40px 0 40px;
+
+	float: right;
+}
+
+.member-profile-icons-container{
+
+}
+
+/* Merch */
+.merch-item-container{
+	float: left;
+	width: 300px;
+	padding: 5px;
+}
+
+.merch-title{
+	font-family: Fredoka One;
+	margin: 5px;
+}
+
+.merch-description{
+	font-size: 8pt;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.merch-icon{
+	border: 1px solid #f2f2f2;
+}
+
+.merch-price{
+	float: right;
+	margin-top: 0;
+}
+
+.merch-buy-button{
+	background-color:#33ff99;
+	box-shadow: 2px 2px 0px #00cc66;
+	
+	padding: 5px;
+	margin-left: 25px;
+
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+}

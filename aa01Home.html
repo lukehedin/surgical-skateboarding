@@ -1,0 +1,87 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>lukehedin - Surgical Skateboarding!</title>
+    <link rel="stylesheet" type="text/css" href="styles/aa01Styles.css" />
+
+	<meta name=viewport content='width=1024'>
+
+	<!-- Include Google APIS (Jquery, fonts) -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+
+	<!-- Include the AngularJS library -->
+    <script src="../../scripts/angular.min.js"></script>
+</head>
+
+<body ng-app="SurgicalSkateboardingApp">
+	<div ng-controller="MainController">
+		<div class="content-container">
+			<nav-bar></nav-bar>
+			<div class="body-strip">
+				<div class="home-blob">
+					<h1>&ldquo;</h1>
+					<p>
+					Surgical Skateboarding is one of Melbourne's largest online communities of qualified surgeons who share a passion for skateboarding. Founded in March 1999, Surgical Skateboarding provides a place for members to meet, arrange skating/professional networking events, and purchase bespoke merchandise that is tailored to their lifestyle.
+					</p>
+				</div>
+				<div class="home-blob">
+					<p>
+					We have over 200 members, and connections to other medical-skate groups across Australia! We accept members of all skill levels, so if you're new to skating or just beginning your undergraduate medical degree, feel free to come along to a meetup or networking event. Existing members are always there to help give newbies some pointers, after all, it's not brain surgery - always...
+					</p>
+					<h1>&rdquo;</h1>
+				</div>
+				<hr>
+
+				<div class="member-profile-container">
+					<div class="active-member-profile-container">
+						<img class="member-icon" ng-src="{{ activeProfile.icon }}">
+						<div class="member-details">
+							<h2 class="member-title">{{ activeProfile.title }}</h2> 
+							<p class="member-name">{{ activeProfile.name }}</p>
+							<p class="member-description">{{ activeProfile.description }}</p>
+						</div>
+					</div>
+					<div class="member-profile-icons-container">
+						<div ng-repeat="memberProfile in memberProfiles"> 
+							<a ng-click="setActiveProfile(memberProfile.name)" class="member-button">
+								<img class="member-button-icon" ng-src="{{ memberProfile.icon }}"> 
+							</a>
+				        </div>
+			        </div>
+				</div>
+			</div>
+			<div class="footer-strip">
+				2016 - Acute Angular Project - <a href="http://www.lukehedin.com">lukehedin.com</a>
+			</div>
+		</div>
+	</div>
+	
+    <!-- Modules -->
+    <script src="scripts/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="scripts/controllers/MainController.js"></script>
+	
+    <!-- Directives-->
+	<script src="scripts/directives/navBar.js"></script>
+	<script src="scripts/directives/memberProfile.js"></script>
+	<script src="scripts/directives/memberButton.js"></script>
+
+	<!-- Templates for Directives -->
+	<script type="text/ng-template" id="navBar.html">
+		<div class="title-strip">
+			<a class="circle" href="aa01Home.html">
+				<div class="title-text">Surgical Skateboarding</div>
+				<h5>"For Surgeons who Shred"</h5>
+			</a>
+			<div class="nav-options-container">
+				<div class="nav-option"><a href="aa01Groups.html">SURGICAL SKATE GROUPS</a></div>
+				<div class="nav-option"><a href="aa01Events.html">SURGICAL SKATE EVENTS</a></div>
+				<div class="nav-option"><a href="aa01Merch.html">SURGICAL SKATE MERCH</a></div>
+			</div>
+		</div>
+	</script>
+</body>
+
+</html>
