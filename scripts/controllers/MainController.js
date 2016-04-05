@@ -32,7 +32,7 @@ app.controller('MainController', ['$scope', function($scope) {
 
   $scope.activeProfile = $scope.memberProfiles[0];
 
-  $scope.setActiveProfile = function(profileName){
+  $scope.setActiveProfile = function(profileName, isAuto){
     var newActiveProfile = null;
 
     //Getting profiles by name, because this isn't extreme data. Normally I'd use an ID. Don't judge me.
@@ -56,7 +56,7 @@ app.controller('MainController', ['$scope', function($scope) {
     });
   };
 
-  // Merchandise Items
+  // Merchandise
   $scope.merchItems = [{
     icon: 'images/ss_board.jpg',
     title: '"Surgeons Shred!" Skateboard',
@@ -79,4 +79,74 @@ app.controller('MainController', ['$scope', function($scope) {
     price: 6.99
   }];
 
+  /* Groups */
+  $scope.groupsMap;
+
+  $scope.skateGroups = [{
+      groupLat: -37.806820,
+      groupLong: 145.031007,
+      groupRadius: 2000,
+      title: 'Kickflip Kewtonians'
+  }, {
+      groupLat: -37.786461,
+      groupLong: 144.831940,
+      groupRadius: 4000,
+      title: 'Sunshine Surgeons'
+  }, {
+      groupLat: -37.802968,
+      groupLong: 144.950113,
+      groupRadius: 2000,
+      title: '180 Surgeons North Melbourne'
+  }, {
+      groupLat: -37.697060,
+      groupLong: 145.059002,
+      groupRadius: 3000,
+      title: 'Freestylin\' Bundoora'
+  }];
+
+  $scope.initMap = function(mapContainerEl) {
+   $scope.groupsMap = new google.maps.Map(mapContainerEl, {
+      center: {lat: -37.815112, lng: 144.960909},
+      zoom: 10
+    });
+
+    $scope.fetchGroupMarkers()
+  };
+
+  $scope.fetchGroupMarkers = function(){
+    $scope.skateGroups.forEach(function(skateGroup){
+      var groupPosition = new google.maps.LatLng(skateGroup.groupLat, skateGroup.groupLong);
+
+      var marker = new google.maps.Marker({
+        position: groupPosition,
+        title: 'Kickflip Kewtonians (Kew)'
+      });
+
+      var radiusCircle = new google.maps.Circle({
+        map: $scope.groupsMap,
+        radius: skateGroup.groupRadius, //2km
+
+        fillColor: '#66ffb3',
+        strokeColor: '#00cc66',
+        strokeWeight: 2
+      });
+
+      radiusCircle.bindTo('center', marker, 'position');
+
+      google.maps.event.addListener(radiusCircle, 'click', function(){
+        $scope.groupsMap.setCenter(groupPosition);
+        $scope.groupsMap.setZoom(12);
+      });
+    });
+  };
+
 }]);
+
+// Groups map
+function initMap(){
+    var mapContainerEl = $('.groups-google-map')[0];
+    var scope = angular.element(mapContainerEl).scope();
+    if(scope) scope.initMap(mapContainerEl);
+};
+
+// // Add circle overlay and bind to marker

@@ -18,15 +18,10 @@
 	<div class="content-container">
 		<nav-bar></nav-bar>
 		<div class="body-strip" ng-controller="MainController">
-		<div class="subheading-strip">Skate Merchandise</div>
-			<div ng-repeat="merchItem in merchItems"> 
-   				<div class="merch-item-container">
-					<img class="merch-icon" ng-src="{{ merchItem.icon }}"> 
-					<h2 class="merch-title">{{ merchItem.title }}</h2> 
-					<p class="merch-description">{{ merchItem.description }}</p>
-					<p class="merch-price">{{ merchItem.price | currency }} <a ng-click="addToCart()" class="merch-buy-button">ADD TO CART</a></p>
-				</div>
-        	</div>
+			<div class="subheading-strip">Upcoming Skate Events</div>
+				One or two upcoming large events
+			<div class="subheading-strip">All Skate Events</div>
+				Have a big events list and apply filters like groups, dates, locations
 		</div>
 		<div class="footer-strip">
 			2016 - Acute Angular Project - <a href="http://www.lukehedin.com">lukehedin.com</a>
@@ -42,6 +37,8 @@
 
     <!-- Directives-->
 	<script src="scripts/directives/navBar.js"></script>
+	<script src="scripts/directives/merchItem.js"></script>
+	<script src="scripts/directives/buyButton.js"></script>
 
 	<!-- Templates for Directives -->
 	<!-- navBar -->

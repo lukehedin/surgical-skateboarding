@@ -19,20 +19,21 @@
 		<div class="content-container">
 			<nav-bar></nav-bar>
 			<div class="body-strip">
+				<div class="subheading-strip">About</div> 
 				<div class="home-blob">
 					<h1>&ldquo;</h1>
-					<p>
-					Surgical Skateboarding is one of Melbourne's largest online communities of qualified surgeons who share a passion for skateboarding. Founded in March 1999, Surgical Skateboarding provides a place for members to meet, arrange skating/professional networking events, and purchase bespoke merchandise that is tailored to their lifestyle.
+					<p style="margin-right: 80px;">
+					Surgical Skateboarding is one of Australia's largest online communities of qualified surgeons who share a passion for skateboarding. Founded in March 1999, Surgical Skateboarding provides a place for members to meet, arrange skating/professional networking events, and purchase bespoke merchandise that is tailored to their lifestyle.
 					</p>
 				</div>
 				<div class="home-blob">
-					<p>
+					<p style="margin-left: 80px;">
 					We have over 200 members, and connections to other medical-skate groups across Australia! We accept members of all skill levels, so if you're new to skating or just beginning your undergraduate medical degree, feel free to come along to a meetup or networking event. Existing members are always there to help give newbies some pointers, after all, it's not brain surgery - always...
 					</p>
 					<h1>&rdquo;</h1>
 				</div>
-				<hr>
 
+				<div class="subheading-strip">Committee Members</div>
 				<div class="member-profile-container">
 					<div class="active-member-profile-container">
 						<img class="member-icon" ng-src="{{ activeProfile.icon }}">
@@ -65,20 +66,22 @@
 	
     <!-- Directives-->
 	<script src="scripts/directives/navBar.js"></script>
-	<script src="scripts/directives/memberProfile.js"></script>
-	<script src="scripts/directives/memberButton.js"></script>
 
 	<!-- Templates for Directives -->
 	<script type="text/ng-template" id="navBar.html">
 		<div class="title-strip">
+			<div>
 			<a class="circle" href="aa01Home.html">
 				<div class="title-text">Surgical Skateboarding</div>
 				<h5>"For Surgeons who Shred"</h5>
 			</a>
+			</div>
 			<div class="nav-options-container">
-				<div class="nav-option"><a href="aa01Groups.html">SURGICAL SKATE GROUPS</a></div>
-				<div class="nav-option"><a href="aa01Events.html">SURGICAL SKATE EVENTS</a></div>
-				<div class="nav-option"><a href="aa01Merch.html">SURGICAL SKATE MERCH</a></div>
+				<div class="nav-option"><a href="aa01Home.html">HOME</a></div>
+				<div class="nav-option"><a href="aa01Groups.html">SKATE GROUPS</a></div>
+				<div class="nav-option"><a href="aa01Events.html">SKATE EVENTS</a></div>
+				<div class="nav-option"><a href="aa01Merch.html">MERCHANDISE</a></div>
+				<div class="nav-option"><a href="aa01Faq.html">FAQ</a></div>
 			</div>
 		</div>
 	</script>
