@@ -33,6 +33,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 .footer-strip{
 	font-size: 9pt;
+	padding: 10px 0px;
 }
 
 .title-strip{
@@ -193,8 +194,21 @@ h1, h2, h3, h4, h5, h6, h7 {
 /* Merch */
 .merch-item-container{
 	float: left;
-	width: 300px;
+	width: 30%;
 	padding: 5px;
+}
+
+.merch-items{
+	width: 70%;	
+	float: left;
+}
+
+.merch-cart{
+	width: 25%;
+	float: right;
+
+	margin: 10px 0px;
+	border: 1px solid gray;
 }
 
 .merch-title{
@@ -210,6 +224,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 .merch-icon{
 	border: 2px solid #f2f2f2;
+	width: 100%;
 }
 
 .merch-price{
@@ -218,6 +233,8 @@ h1, h2, h3, h4, h5, h6, h7 {
 }
 
 .merch-buy-button{
+	cursor: pointer;
+
 	background-color:#33ff99;
 	box-shadow: 2px 2px 0px #00cc66;
 	
@@ -229,16 +246,47 @@ h1, h2, h3, h4, h5, h6, h7 {
 	text-decoration: none;
 }
 
+.merch-buy-button:hover{
+	background-color:#66ffb3;
+}
+
 /* Groups */
+.groups-info-container{
+	padding: 10px 0px;
+}
+
 .groups-container{
 	padding: 5px;
 }
 
 .groups-google-map{
 	height: 400px;
-	width: 500px;
+	width: 50%;
+	float: left;
 
 	border: 2px solid #f2f2f2;
+}
+
+.viewing-group-details{
+	float: right;
+	width: 45%;
+}
+
+/*Events */
+.upcoming-event, .other-event{
+	overflow: auto;
+	padding: 5px;
+}
+
+.upcoming-event-icon, .event-icon{
+	float: left;
+	width: 30%;
+}
+
+.upcoming-event-details, .other-event-details{
+	float: right;
+	width: 65%;
+	text-align: left;
 }
 
 /* FAQ */

@@ -11,7 +11,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
 
 	<!-- Include the AngularJS library -->
-    <script src="../../scripts/angular.min.js"></script>
+    <script src="../scripts/angular.min.js"></script>
 </head>
 
 <body ng-app="SurgicalSkateboardingApp">
@@ -19,13 +19,17 @@
 		<nav-bar></nav-bar>
 		<div class="body-strip" ng-controller="MainController">
 			<div class="subheading-strip">Frequently Asked Questions</div>
-				<div class="frequently-asked-container">
-					<b>Q. Are you serious?</b>
-					<p>A. No</p>
+			<div class="frequently-asked-container">
+				<div ng-repeat="faq in faqs"> 
+					<b>Q. {{ faq.q }}</b>
+					<p>A. {{ faq.a }}</p>
 				</div>
+				<b>Q. Are you serious? Is all this Surgical Skateboarding stuff real?</b>
+				<p>A. <a href="http://www.lukehedin.com">No</a>.</p>
+			</div>
 		</div>
 		<div class="footer-strip">
-			2016 - Acute Angular Project - <a href="http://www.lukehedin.com">lukehedin.com</a>
+			2016 - Sample Project by Luke Hedin - <a href="http://www.lukehedin.com">lukehedin.com</a>
 		</div>
 	</div>
 	

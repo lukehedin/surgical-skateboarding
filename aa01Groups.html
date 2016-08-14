@@ -12,7 +12,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
 
 	<!-- Include the AngularJS library -->
-    <script src="../../scripts/angular.min.js"></script>
+    <script src="../scripts/angular.min.js"></script>
     <!-- Include Google Mapis API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8_BmspjUEdbPYMx7FCRJRO4t_Tbx8ObM&callback=initMap"
     async defer></script>
@@ -25,13 +25,20 @@
 		<div class="subheading-strip">Skate Groups</div>
 			<div class="groups-container">
 				<div class="groups-info-container">
-					Click on a highlighted region on the map, or select a specific group manually.
+					Click on a highlighted region on the map, or select a specific group manually:
+					<select ng-options="groupOption as groupOption.title for groupOption in skateGroups" name="groupSelect" ng-model="viewingGroup" ng-change="setSelectedGroup(viewingGroup)">
+						<option value=""><i>No Group Selected</i></option>
+				    </select>
 				</div> 
 				<div class="groups-google-map"></div>
+				<div class="viewing-group-details">
+				    <h2>{{ selectedSkateGroup.title }}</h2>
+				    <p>{{ selectedSkateGroup.description }}</p>
+				</div>
 			</div>
 		</div>
 		<div class="footer-strip">
-			2016 - Acute Angular Project - <a href="http://www.lukehedin.com">lukehedin.com</a>
+			2016 - Sample Project by Luke Hedin - <a href="http://www.lukehedin.com">lukehedin.com</a>
 		</div>
 	</div>
 	

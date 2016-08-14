@@ -11,7 +11,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
 
 	<!-- Include the AngularJS library -->
-    <script src="../../scripts/angular.min.js"></script>
+    <script src="../scripts/angular.min.js"></script>
 </head>
 
 <body ng-app="SurgicalSkateboardingApp">
@@ -19,12 +19,30 @@
 		<nav-bar></nav-bar>
 		<div class="body-strip" ng-controller="MainController">
 			<div class="subheading-strip">Upcoming Skate Events</div>
-				One or two upcoming large events
-			<div class="subheading-strip">All Skate Events</div>
-				Have a big events list and apply filters like groups, dates, locations
+			<div class="upcoming-events-container">
+				<div class="upcoming-event" ng-repeat="event in getUpcomingEvents()">
+					<img class="upcoming-event-icon" ng-src="{{ event.icon }}" />
+					<div class="upcoming-event-details">
+						<h2>{{ event.title }}</h2>
+						<p>{{ event.date | date}}</p>
+						<p>{{ event.description }}</p>
+					</div>
+				</div>
+			</div>
+			<div class="subheading-strip">All Other Skate Events</div>
+			<div class="other-events-container">
+				<div class="other-event" ng-repeat="event in getOtherEvents()"> 
+					<img class="event-icon" ng-src="{{ event.icon }}" />
+						<div class="other-event-details">
+							<h3>{{ event.title }}</h3>
+							<p>{{ event.date | date}}</p>
+							<p>{{ event.description }}</p>
+						</div>
+				</div>
+			</div>
 		</div>
 		<div class="footer-strip">
-			2016 - Acute Angular Project - <a href="http://www.lukehedin.com">lukehedin.com</a>
+			2016 - Sample Project by Luke Hedin - <a href="http://www.lukehedin.com">lukehedin.com</a>
 		</div>
 	</div>
 	
@@ -37,8 +55,6 @@
 
     <!-- Directives-->
 	<script src="scripts/directives/navBar.js"></script>
-	<script src="scripts/directives/merchItem.js"></script>
-	<script src="scripts/directives/buyButton.js"></script>
 
 	<!-- Templates for Directives -->
 	<!-- navBar -->
